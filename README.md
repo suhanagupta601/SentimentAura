@@ -1,38 +1,33 @@
 # SentimentAura
 
-A full-stack web application that performs real-time speech transcription, an AI-powered sentiment and keyword analysis, and Perlin inspired live
-generative art visualization driven by human speech. 
+A full-stack web application that performs real-time speech transcription, an AI-powered sentiment and keyword analysis, and Perlin-noise inspired live visualization driven by human speech. 
 
-As users speak, their words appear on screen in real time. Then, the phrase is analyzed by an LLM for emotional sentiment and key emotions, on which the Perlin-noise-based visual "aura" depends. The "aura" is then displayed in the browser. 
-
-This project demonstrates end-to-end orchestration across frontend audio streaming, backend AI inference, and data-driven generative visuals.
+As the user speaks, their words will appear live on screen. Then, the transcribed audio is analyzed by an LLM for emotional sentiment and key emotions, which inform the Perlin-noise visual (the "aura"). The "aura" is then displayed in correspondence to the scored emotion.
 
 ---
 
 ## Features
 
-- 🎙 **Live Audio Transcription**: streams microphone audio via WebSockets to live transcription API and displays live, autoscrolling trnscript in the UI
+- 🎙 **Audio Transcription**: it streams the user's audio via WebSockets to the live transcription API and displays the transcribed version live, with an autoscrolling feature of the transcription in the UI.
 
 
-- 🧠 **AI Sentiment & Keyword Extraction**: transcript segments are sent to the back end, which securely calls an LLM API to extract a sentiment score and keywords. Finally, it returns the formatted JSON to the frontend.
+- 🎭 **AI Sentiment & Keyword Extraction**: the transcript segments are sent to the back end, which calls the LLM API to extract a sentiment score (based on a 1 - 5 scale) and keywords. Finally, it returns the formatted JSON to the frontend.
 
-- 🎨 **Visualization**: Perlin-inspired visual, in which color, motion, and intensity react to sentiment changes.
-
-
+- 🖼️ **Visualization**: a 600-particle Perlin-inspired visual, where color, motion, and intensity react to sentiment/emotional changes.
 
 ## Tech-Stack: 
 React, JavaScript, Python (FastAPI), WebSockets, p5.js, LLM APIs
 
 ### External: 
-- **Transcription API:** Real-time speech-to-text via WebSockets
-- **LLM API:** Sentiment analysis and keyword extraction
+- **Transcription API:** Used for speech-to-text via WebSockets
+- **LLM API:** To determine sentiment analysis and keyword extraction
 
 
 ## Instructions:
-1. User clicks **Start** → microphone access granted
-2. Audio streamed to transcription API via WebSocket
-3. Live transcript JSON streamed back to frontend
-4. Final transcript segments sent to backend (`/process_text`)
+1. User clicks **Start** to access the microphone
+2. The audio is streamed to the transcription API via WebSockets 
+3. The transcripted JSON is streamed back to the frontend
+4. Those transcript segments are sent to the backend (`/process_text`)
 5. Backend calls LLM API for sentiment & keywords
 6. Frontend receives structured AI output
-7. Visualization and UI update in real time
+7. Visualization and UI finally update live
