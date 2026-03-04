@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
 // api key
-const REACT_APP_DEEPGRAM_API_KEY = "75a568d0d5854317749de01078ab3567024b6bcb";
+const dgKey = process.env.REACT_APP_DEEPGRAM_API_KEY;
 
 export default function MicRecorder({ onTranscript }) {
   const [isRecording, setIsRecording] = useState(false);
@@ -16,8 +16,6 @@ export default function MicRecorder({ onTranscript }) {
     try {
       setError("");
       console.log("Starting recording");
-
-      const dgKey = REACT_APP_DEEPGRAM_API_KEY;
       
       if (!dgKey) {
         throw new Error("Deepgram API key not found");

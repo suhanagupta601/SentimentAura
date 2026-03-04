@@ -6,6 +6,10 @@ import MicRecorder from "./MicRecorder";
 export default function App() {
   const [sentiment, setSentiment] = useState(0.5);
   const [emotion, setEmotion] = useState("neutral");
+  
+  
+  // temporary - suppressing warning b/c keywords set by backend is never displayed in UI
+  // eslint-disable-next-line no-unused-vars
   const [keywords, setKeywords] = useState([]);
   const [transcript, setTranscript] = useState("");
   const [allTranscripts, setAllTranscripts] = useState([]);
@@ -27,7 +31,7 @@ export default function App() {
       try {
         console.log("📤 Sending to backend:", text);
         
-        const res = await fetch("http://localhost:8000/process_text/process_text", {
+        const res = await fetch("http://localhost:8000/process_text", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text }),
