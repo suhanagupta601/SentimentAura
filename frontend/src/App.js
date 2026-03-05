@@ -31,7 +31,7 @@ export default function App() {
       try {
         console.log("📤 Sending to backend:", text);
         
-        const res = await fetch("http://localhost:8000/process_text", {
+        const res = await fetch("https://sentimentaura.onrender.com/process_text", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text }),
