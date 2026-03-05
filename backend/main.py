@@ -121,7 +121,7 @@ async def process_text(request: Request):
             "sentiment": 0.5, #default
             "keywords": [],
             "emotion": "neutral"
-        }, 200
+        }
 
     # # limitations to how many full-requests you can make (openai = 3 requests)
     # except openai.error.RateLimitError:
@@ -131,7 +131,7 @@ async def process_text(request: Request):
     #         "sentiment": 0.5,
     #         "keywords": [],
     #         "emotion": "neutral"
-    #     }, 200
+    #     }
     
     except Exception as e:
         return {
@@ -140,7 +140,7 @@ async def process_text(request: Request):
             "sentiment": 0.5,
             "keywords": [],
             "emotion": "neutral"
-        }, 200
+        }
 
         
 
