@@ -4,6 +4,7 @@ A full-stack web application that performs real-time speech transcription, an AI
 
 As the user speaks, their words will appear live on screen. Then, the transcribed audio is analyzed by an LLM for emotional sentiment and key emotions, which inform the Perlin-noise visual (the "aura"). The "aura" is then displayed in correspondence to the scored emotion.
 
+[Live Deployment Link](https://sentiment-aura-woad.vercel.app/)
 ---
 
 ## Features
