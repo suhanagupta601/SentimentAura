@@ -11,7 +11,7 @@ As the user speaks, their words will appear live on screen. Then, the transcribe
 - 🎙 **Audio Transcription**: it streams the user's audio via WebSockets to the live transcription API and displays the transcribed version live, with an autoscrolling feature of the transcription in the UI.
 
 
-- 🎭 **AI Sentiment & Keyword Extraction**: the transcript segments are sent to the back end, which calls the LLM API to extract a sentiment score (based on a 1 - 5 scale) and keywords. Finally, it returns the formatted JSON to the frontend.
+- 🎭 **AI Sentiment & Keyword Extraction**: the transcript segments are sent to the back end, which calls the LLM API to extract a sentiment score (based on a 0 - 1 scale) and keywords. Finally, it returns the formatted JSON to the frontend.
 
 - 🖼️ **Visualization**: a 600-particle Perlin-inspired visual, where color, motion, and intensity react to sentiment/emotional changes.
 
